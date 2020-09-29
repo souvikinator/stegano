@@ -16,7 +16,7 @@ Check out [here](https://en.wikipedia.org/wiki/Steganography), I'm too lazy to e
 * It can also extract message/text from an image (although Limitations are there).
 
 **How to use?:**
-* Just follow this [website](website.com) and play around.
+* Just follow this [website](https://darthcucumber.github.io/stegano/) and play around.
 
 * There are two section in the website: *Hide* & *extract*.
     * Encode: Upload image and write a message and you'll get two images in return (original and the one with msg hidden inside it)
@@ -24,7 +24,7 @@ Check out [here](https://en.wikipedia.org/wiki/Steganography), I'm too lazy to e
 
 ### :hammer:Built With
 * The working of this project is writter in pure or vanilla JS (JavaScript) with no external libraries.
-* [Bootstrap](https://bootstrap.com)
+* [Bootstrap](https://getbootstrap.com/)
     Despite of using bootstrap the website is not visually pleasing so 😬.
 
 ### :gear:Working
