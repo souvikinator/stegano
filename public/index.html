@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Steganography Tool
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>🔐Stegnography Tool</h1>
+        </div>
+        <hr />
+        <div class="alert alert-success">
+            <p>Well certainly this website is not visually pleasing but it works.😆</p>
+            <p>What is Stegnography? <a href="https://en.wikipedia.org/wiki/Steganography">know here</a>, I'm too lazy
+                to explain!</p>
+            <p>Function:
+            <ul>
+                <li>Hides message/text inside an image.</li>
+                <li>Extract message/text inside an image.</li>
+            </ul>
+            </p>
+            <p>Limitations:
+            <ul>
+                <li>Only PNG images are used.</li>
+                <li>Uses basic LSB method for functioning.</li>
+                <li>Still a lots of bugs to fix.</li>
+                <li>The Source Code is really unoptimised so will be working on it.</li>
+            </ul>
+            </p>
+        </div>
+        <div>
+            <div class="card">
+                <div class="card-header">
+                    <h5><span role="img" aria-label="encrypt">Encode 🔒</span></h5>
+                </div>
+                <div class="card-body">
+                    <div class="mt-2 col-md-12">
+                        <div style="border: 1px solid grey; border-radius: 3px; padding: 2px;">
+                            <input type="file" accept="image/x-png" id="_image_upload" />
+                        </div>
+                    </div>
+                    <div class="mt-2 col-md-12">
+                        <textarea style="border: 1px solid grey; border-radius: 3px;" class="form-control"
+                            aria-label="With textarea" id="_input_msg" placeholder="Message Here..."></textarea>
+                    </div>
+                    <div class="mt-2 col-md-12">
+                        <button class="btn btn-primary" id="hide_msg">Encode Message</button>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div id="_canvas_container"
+                style="padding:3px;display:none; border: 1px dashed grey; border-radius: 3px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Original Image</h5>
+                        <canvas id="_input_image">
+                            canvas if not supported by your browser :(
+                        </canvas>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Processed Image (enter message and press the button)</h5>
+                        <canvas id="_encrypted_image">
+                            canvas if not supported by your browser :(
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="alert alert-success" id="after_info" style="display:none">
+                <p>Both look same right? well left is the original image and right is the image with secret message in
+                    it ;) <br /> Go ahead and save the image on the right by right clicking on it and save.</p>
+                <p></p>
+                <p>Use that image below to extract the message out of it but wait 🤫 It's secret.</p>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5><span role="img" aria-label="decrypt">Decode 🔓</span></h5>
+                </div>
+                <div class="card-body">
+                    <div class="mt-2 col-md-12">
+                        <div style="border: 1px solid grey; border-radius: 3px; padding: 2px;">
+                            <input type="file" id="_decrypt_image" aria-describedby="inputGroupFileAddon01" />
+                        </div>
+                    </div>
+                    <div class="mt-2 col-md-12">
+                        <button class="btn btn-primary" id="_decrypt_btn">Decode Message</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 col-md-11">
+                <div class="row" >
+                    <div class="col-md-6">
+                        <canvas style="display:none;" id="_hidden_msg_img" >
+                            sorry no canvas for you:((
+                        </canvas>
+                    </div>
+                    <div class="alert alert-info col-md-6" role="alert" id="hidden_msg_out" style="display:none;">
+                        <p>:: your secret message 🔓 ::</p>
+                        <textarea id="output_text" style="min-width: 100%" rows="8"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div style="text-align: center; margin-top: 20px; margin-bottom: 10px;">
+            <p>
+                after constant smashing of ⌨️ <br />
+                made by <a href="https://github.com/DarthCucumber">@DarthCucumber</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="../JS/tools.js"></script>
+    <script src="../JS/encode.js"></script>
+    <script src="../JS/decode.js"></script>
+</body>
+
+</html>
