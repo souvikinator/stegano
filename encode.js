@@ -38,7 +38,26 @@ window.onload = function () {
         }
     });
 
-    /*hide msg button in clicked */
+/* download canvas image when canvas is clicked*/
+    _canvas_processed.addEventListener('click',(e)=>{
+             //get canvas data  
+             var image = _canvas_processed.toDataURL();  
+    
+             //create temporary link  
+             var tmpLink = document.createElement( 'a'  );  
+             tmpLink.download = 'processedImage.png'; 
+             
+             //set the name of the download file 
+             tmpLink.href = image;  
+
+            //temporarily add link to body and initiate the download  
+            document.body.appendChild( tmpLink  );  
+            tmpLink.click();  
+            document.body.removeChild( tmpLink  );                                         
+    });
+
+
+/*hide msg button in clicked */
     hide_msg_button.addEventListener('click', function (e) {
 
             if(_message.value.length<=0){
